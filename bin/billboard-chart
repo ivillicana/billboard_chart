@@ -3,3 +3,4 @@
 require_relative '../config/environment.rb'
 
 BillboardChart::CLI.new.run
+BillboardChart::Song.scrape_songs
