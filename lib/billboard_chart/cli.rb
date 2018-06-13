@@ -1,7 +1,17 @@
 class BillboardChart::CLI
 
+    # Main instance method
     def run
-        puts "These are the Billboard Hot 100 songs:"
+        list_songs
     end
     
+    # list songs from scraper
+    def list_songs
+        
+    end
+
+    # displays main menu
+    def menu
+        
+    end
 end
