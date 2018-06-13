@@ -1,0 +1,3 @@
+class BillboardChart::Song
+    
+end
