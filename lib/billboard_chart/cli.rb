@@ -25,11 +25,22 @@ class BillboardChart::CLI
     # displays main menu
     def main_menu
         puts "Enter number of song to see more information:"
+        puts "(Type 'exit' to close the application)"
         input = gets.strip.downcase
 
-        if input.to_i > 0
+        if input.to_i > 0 #choose a specific song and print info
             song = @songs[input.to_i - 1]
             song.print_info
+        elsif input == "exit" #closes the application
+            close_app
+        else
+            puts "Please enter a valid value..."
+            main_menu
         end
+    end
+
+    # ends the application
+    def close_app 
+        puts "Thank you for using the Billboard Hot 100 CLI Application!"
     end
 end
