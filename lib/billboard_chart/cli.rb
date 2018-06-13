@@ -7,7 +7,7 @@ class BillboardChart::CLI
     
     # list songs from scraper
     def list_songs
-        
+        puts "Here are this week's Billboard Hot 10 songs:"
     end
 
     # displays main menu
