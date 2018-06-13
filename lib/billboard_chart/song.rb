@@ -12,6 +12,7 @@ class BillboardChart::Song
     # Return this week's Billboard Hot 100 based on scraped data
     def self.this_week
         self.scrape_songs
+        @@all
     end
 
     # Scrape songs from https://www.billboard.com/charts/hot-100
@@ -39,8 +40,6 @@ class BillboardChart::Song
             song.peak_position = row.css(".chart-row__secondary .chart-row__top-spot .chart-row__value").text
             song.weeks = row.css(".chart-row__secondary .chart-row__weeks-on-chart .chart-row__value").text
             i += 1
-        end
-        @@all
-        
+        end   
     end
 end
