@@ -42,4 +42,14 @@ class BillboardChart::Song
             i += 1
         end   
     end
+
+    # Print info for chosen song
+    def print_info
+        puts "Title: #{self.title}"
+        puts "Artist: #{self.artist}"
+        puts "Current Rank: #{self.current_rank}"
+        puts "Last Week Rank: #{self.last_week_rank}"
+        puts "Peak Rank: #{self.peak_position}"
+        puts "Weeks on chart: #{self.weeks}"
+    end
 end
