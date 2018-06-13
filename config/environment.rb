@@ -1,7 +1,8 @@
 require 'bundler/setup'
 require 'pry'
+require 'open-uri'
 
 Bundler.require(:default)
 
 require_relative "../lib/billboard_chart/version"
-require_relative "../lib/billboard_chart/cli.rb"
+require_all './lib/billboard_chart'
