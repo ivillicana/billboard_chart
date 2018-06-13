@@ -11,7 +11,7 @@ class BillboardChart::Song
 
     # Return this week's Billboard Hot 100 based on scraped data
     def self.this_week
-        @@all
+        self.scrape_songs
     end
 
     # Scrape songs from https://www.billboard.com/charts/hot-100
