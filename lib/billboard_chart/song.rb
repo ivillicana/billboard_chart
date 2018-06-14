@@ -27,7 +27,7 @@ class BillboardChart::Song
         page_html = Nokogiri::HTML(open("https://www.billboard.com/charts/hot-100"))
         chart = page_html.css(".chart-data .container")
         
-        #Iterate through the first 10 rows of the billboard chart
+        #Iterate through the first 100 rows of the billboard chart
         #Create instances of the Song class during each iteration
         rows = chart.css(".chart-row")
         rows.each do |row|
