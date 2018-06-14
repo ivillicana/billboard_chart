@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Isaac Villicana"]
   spec.email         = ["villicana.i@gmail.com"]
 
-  spec.summary       = %q{This gem (billboard_chart) includes a CLI that scrapes data from www.billboard.com and shows the user the 'Hot 100' list.}
-  spec.description   = %q{See summary}
+  spec.summary       = %q{This gem (billboard_chart) includes a CLI shows a user the 'Billboard Hot 100' list.}
+  spec.description   = %q{Scrapes data from https://www.billboard.com/charts/hot-100 and allows a user to see the chart in an organized manner. Selecting a song from the list will display the user with additional information about that song.}
   spec.homepage      = "https://github.com/ivillicana/billboard_chart"
   spec.license       = "MIT"
 
