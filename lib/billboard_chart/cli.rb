@@ -8,8 +8,9 @@ class BillboardChart::CLI
     
     # list songs from scraper
     def main_menu
-        puts "Welcome to the Billboard Hot 100 app:"
-        puts "Which ranks would you like to see?"
+        puts "-----Welcome to the Billboard Hot 100 app-----"
+        puts ""
+        puts "Which chart range would you like to see?"
         display_range
         select_range
         display_songs
@@ -19,11 +20,13 @@ class BillboardChart::CLI
     def display_range
         i = 1
         r= 1
+        puts ""
         10.times do
-            puts "#{i}. Ranks #{r}-#{r+9}"
+            puts "#{i}.   Ranks #{r}-#{r+9}"
             i += 1
             r += 10
         end
+        puts ""
     end
 
     def select_range
@@ -57,18 +60,21 @@ class BillboardChart::CLI
         input = nil
         while input != "exit"   
             puts "Please enter the song number to see more information:"
-            puts "(You can also type 'exit' or 'main menu')"
+            puts "(You can also type 'exit', 'see list', or 'main menu')"
             input = gets.strip.downcase
 
             #if/elseif/else depending on user input
             if input.to_i.between?(1, @songs.length)
                 song = @songs[input.to_i - 1]
                 song.print_info
+            elsif input == "see list"
+                display_songs
             elsif input == "main menu"
                 main_menu
             elsif input == "exit"
                 close_app
             else
+                puts ""
                 puts "Please enter a valid value..."
             end
         end

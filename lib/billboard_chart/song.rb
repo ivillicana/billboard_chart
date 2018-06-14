@@ -2,11 +2,10 @@ class BillboardChart::Song
     # set up attributes for each instance
     attr_accessor :title, :artist, :current_rank, :last_week_rank, :peak_position, :weeks
 
-    @@all = []
 
     # initialize song object and add to @@all array
     def initialize
-        @@all << self
+        
     end
 
     def self.reset
@@ -19,8 +18,7 @@ class BillboardChart::Song
         if range == 1
             @@all[0, 10]
         else
-            range -= 1
-            @@all["#{range}1".to_i-1, 10]
+            @@all["#{range-1}0".to_i, 10]
         end
     end
 
@@ -32,7 +30,8 @@ class BillboardChart::Song
         #Iterate through the first 100 rows of the billboard chart
         #Create instances of the Song class during each iteration
         rows = chart.css(".chart-row")
-        rows.each do |row|
+        songs = []
+        rows.collect do |row|
             song = BillboardChart::Song.new
             song.title = row.css(".chart-row__song").text
             song.artist = row.css(".chart-row__artist").text.strip
@@ -40,18 +39,20 @@ class BillboardChart::Song
             song.last_week_rank = row.css(".chart-row__secondary .chart-row__last-week .chart-row__value").text
             song.peak_position = row.css(".chart-row__secondary .chart-row__top-spot .chart-row__value").text
             song.weeks = row.css(".chart-row__secondary .chart-row__weeks-on-chart .chart-row__value").text
-        end   
+            songs << song
+        end 
+        songs  
     end
 
     # Print info for chosen song
     def print_info
         puts ""
-        puts "Title: #{self.title}"
-        puts "Artist: #{self.artist}"
-        puts "Current Rank: #{self.current_rank}"
-        puts "Last Week Rank: #{self.last_week_rank}"
-        puts "Peak Rank: #{self.peak_position}"
-        puts "Weeks on chart: #{self.weeks}"
+        puts "Title:          #{self.title}"
+        puts "Artist:         #{self.artist}"
+        puts "Current Rank:   #{self.current_rank}"
+        puts "Previous Rank:  #{self.last_week_rank}"
+        puts "Peak Rank:      #{self.peak_position}"
+        puts "Total Weeks:    #{self.weeks}"
         puts ""
     end
 end
