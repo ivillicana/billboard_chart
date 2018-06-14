@@ -17,21 +17,20 @@ class BillboardChart::Song
 
     # Scrape songs from https://www.billboard.com/charts/hot-100
     def self.scrape_songs
-        # title: row.css(".chart-row__song").text
-        # artist: row.css(".chart-row__artist").text.strip
-        # current_rank: row.css(".chart-row__current-week").text
-        # last_week_rank: row.css(".chart-row__secondary .chart-row__last-week .chart-row__value").text
-        # peak_position: row.css(".chart-row__secondary .chart-row__top-spot .chart-row__value").text
-        # weeks: row.css(".chart-row__secondary .chart-row__weeks-on-chart .chart-row__value").text
+        # title: rows.css(".chart-row__song").text
+        # artist: rows.css(".chart-row__artist").text.strip
+        # current_rank: rows.css(".chart-row__current-week").text
+        # last_week_rank: rows.css(".chart-row__secondary .chart-row__last-week .chart-row__value").text
+        # peak_position: rows.css(".chart-row__secondary .chart-row__top-spot .chart-row__value").text
+        # weeks: rows.css(".chart-row__secondary .chart-row__weeks-on-chart .chart-row__value").text
         
         page_html = Nokogiri::HTML(open("https://www.billboard.com/charts/hot-100"))
         chart = page_html.css(".chart-data .container")
         
         #Iterate through the first 10 rows of the billboard chart
         #Create instances of the Song class during each iteration
-        i = 1
-        10.times do 
-            row = chart.css(".chart-row--#{i}")
+        rows = chart.css(".chart-row")
+        rows.each do |row|
             song = BillboardChart::Song.new
             song.title = row.css(".chart-row__song").text
             song.artist = row.css(".chart-row__artist").text.strip
@@ -39,7 +38,6 @@ class BillboardChart::Song
             song.last_week_rank = row.css(".chart-row__secondary .chart-row__last-week .chart-row__value").text
             song.peak_position = row.css(".chart-row__secondary .chart-row__top-spot .chart-row__value").text
             song.weeks = row.css(".chart-row__secondary .chart-row__weeks-on-chart .chart-row__value").text
-            i += 1
         end   
     end
 
