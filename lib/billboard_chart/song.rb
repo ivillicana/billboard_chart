@@ -15,8 +15,7 @@ class BillboardChart::Song
 
     # Return this week's Billboard Hot 100 based on scraped data
     def self.this_week(range)
-        self.reset
-        self.scrape_songs
+        @@all ||= self.scrape_songs
         if range == 1
             @@all[0, 10]
         else
@@ -27,13 +26,6 @@ class BillboardChart::Song
 
     # Scrape songs from https://www.billboard.com/charts/hot-100
     def self.scrape_songs
-        # title: rows.css(".chart-row__song").text
-        # artist: rows.css(".chart-row__artist").text.strip
-        # current_rank: rows.css(".chart-row__current-week").text
-        # last_week_rank: rows.css(".chart-row__secondary .chart-row__last-week .chart-row__value").text
-        # peak_position: rows.css(".chart-row__secondary .chart-row__top-spot .chart-row__value").text
-        # weeks: rows.css(".chart-row__secondary .chart-row__weeks-on-chart .chart-row__value").text
-        
         page_html = Nokogiri::HTML(open("https://www.billboard.com/charts/hot-100"))
         chart = page_html.css(".chart-data .container")
         

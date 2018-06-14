@@ -4,7 +4,6 @@ class BillboardChart::CLI
     def run
         main_menu
         select_song
-        close_app
     end
     
     # list songs from scraper
@@ -68,7 +67,7 @@ class BillboardChart::CLI
             elsif input == "main menu"
                 main_menu
             elsif input == "exit"
-                break
+                close_app
             else
                 puts "Please enter a valid value..."
             end
