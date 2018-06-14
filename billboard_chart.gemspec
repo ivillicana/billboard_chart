@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Isaac Villicana"]
   spec.email         = ["villicana.i@gmail.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
+  spec.summary       = %q{This gem (billboard_chart) includes a CLI that scrapes data from www.billboard.com and shows the user the 'Hot 100' list.}
+  spec.description   = %q{See summary}
   spec.homepage      = "https://github.com/ivillicana/billboard_chart"
   spec.license       = "MIT"
 
@@ -35,4 +35,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.16"
   spec.add_development_dependency "rake", "~> 10.0"
   spec.add_development_dependency "rspec", "~> 3.0"
+  spec.add_dependency "nokogiri", "~> 1.8"
+  spec.add_dependency "require_all", "~> 2.0"
 end

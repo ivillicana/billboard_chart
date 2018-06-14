@@ -1,23 +1,41 @@
+PATH
+  remote: .
+  specs:
+    billboard_chart (0.1.0)
+      nokogiri (~> 1.8)
+      require_all (~> 2.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
-    coderay (1.1.2)
-    method_source (0.9.0)
+    diff-lcs (1.2.5)
     mini_portile2 (2.3.0)
     nokogiri (1.8.2)
       mini_portile2 (~> 2.3.0)
-    pry (0.11.3)
-      coderay (~> 1.1.0)
-      method_source (~> 0.9.0)
+    rake (10.4.2)
     require_all (2.0.0)
+    rspec (3.4.0)
+      rspec-core (~> 3.4.0)
+      rspec-expectations (~> 3.4.0)
+      rspec-mocks (~> 3.4.0)
+    rspec-core (3.4.1)
+      rspec-support (~> 3.4.0)
+    rspec-expectations (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-mocks (3.4.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.4.0)
+    rspec-support (3.4.1)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
-  nokogiri
-  pry
-  require_all
+  billboard_chart!
+  bundler (~> 1.16)
+  rake (~> 10.0)
+  rspec (~> 3.0)
 
 BUNDLED WITH
    1.16.2
