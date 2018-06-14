@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    billboard_chart (0.1.0)
+    billboard_hot_100 (0.1.1)
       nokogiri (~> 1.8)
       require_all (~> 2.0)
 
@@ -32,7 +32,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  billboard_chart!
+  billboard_hot_100!
   bundler (~> 1.16)
   rake (~> 10.0)
   rspec (~> 3.0)
