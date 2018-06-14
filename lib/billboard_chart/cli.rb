@@ -6,7 +6,7 @@ class BillboardChart::CLI
         select_song
     end
     
-    # list songs from scraper
+    # main menu selection and builds songs from scraper
     def main_menu
         puts "-----Welcome to the Billboard Hot 100 app-----"
         puts ""
@@ -16,7 +16,7 @@ class BillboardChart::CLI
         display_songs
     end
 
-    #display and select range of songs
+    #displays range of songs
     def display_range
         i = 1
         r= 1
@@ -29,6 +29,7 @@ class BillboardChart::CLI
         puts ""
     end
 
+    #allows selection of range of songs
     def select_range
         puts "Enter the number of the range you would like to see?"
         input = gets.strip.downcase
@@ -55,7 +56,7 @@ class BillboardChart::CLI
         @songs = BillboardChart::Song.this_week(range)
     end
 
-    # displays main menu
+    # displays song info and asks for user input
     def select_song
         input = nil
         while input != "exit"   

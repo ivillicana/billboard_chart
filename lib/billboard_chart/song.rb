@@ -2,16 +2,6 @@ class BillboardChart::Song
     # set up attributes for each instance
     attr_accessor :title, :artist, :current_rank, :last_week_rank, :peak_position, :weeks
 
-
-    # initialize song object and add to @@all array
-    def initialize
-        
-    end
-
-    def self.reset
-        @@all.clear
-    end
-
     # Return this week's Billboard Hot 100 based on scraped data
     def self.this_week(range)
         @@all ||= self.scrape_songs
@@ -39,9 +29,8 @@ class BillboardChart::Song
             song.last_week_rank = row.css(".chart-row__secondary .chart-row__last-week .chart-row__value").text
             song.peak_position = row.css(".chart-row__secondary .chart-row__top-spot .chart-row__value").text
             song.weeks = row.css(".chart-row__secondary .chart-row__weeks-on-chart .chart-row__value").text
-            songs << song
-        end 
-        songs  
+            song
+        end  
     end
 
     # Print info for chosen song
