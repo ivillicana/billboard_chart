@@ -1,13 +1,13 @@
-# BillboardChart
+# BillboardHot100
 
-BillboardChartCLI is a command-line interface applications that scrapes and displays the 'Billboard Hot 100' songs from https://www.billboard.com/charts/hot-100
+BillboardHot100 is a command-line interface applications that scrapes and displays the 'Billboard Hot 100' songs from https://www.billboard.com/charts/hot-100
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'billboard_chart'
+gem 'billboard_hot_100'
 ```
 
 And then execute:
@@ -16,7 +16,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install billboard_chart
+    $ gem install billboard_hot_100
 
 ## Usage
 
@@ -24,7 +24,7 @@ TODO: Write usage instructions here
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/billboard-chart` for an interactive prompt that will allow you to experiment.
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/billboard_hot_100` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 

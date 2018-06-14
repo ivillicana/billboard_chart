@@ -1,6 +1,6 @@
-RSpec.describe BillboardChart do
+RSpec.describe BillboardHot100 do
   it "has a version number" do
-    expect(BillboardChart::VERSION).not_to be nil
+    expect(BillboardHot100::VERSION).not_to be nil
   end
 
   it "does something useful" do

@@ -1,4 +1,4 @@
-class BillboardChart::Song
+class BillboardHot100::Song
     # set up attributes for each instance
     attr_accessor :title, :artist, :current_rank, :last_week_rank, :peak_position, :weeks
 
@@ -22,7 +22,7 @@ class BillboardChart::Song
         rows = chart.css(".chart-row")
         songs = []
         rows.collect do |row|
-            song = BillboardChart::Song.new
+            song = self.new
             song.title = row.css(".chart-row__song").text
             song.artist = row.css(".chart-row__artist").text.strip
             song.current_rank = row.css(".chart-row__current-week").text

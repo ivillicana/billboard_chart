@@ -6,4 +6,4 @@ require 'nokogiri'
 
 Bundler.require(:default)
 
-require_all './lib/billboard_chart'
+require_all './lib/billboard_hot_100'

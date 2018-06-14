@@ -1,4 +1,4 @@
-class BillboardChart::CLI
+class BillboardHot100::CLI
 
     # Main instance method
     def run
@@ -53,7 +53,7 @@ class BillboardChart::CLI
 
     #create Song objects
     def create_songs(range)
-        @songs = BillboardChart::Song.this_week(range)
+        @songs = BillboardHot100::Song.this_week(range)
     end
 
     # displays song info and asks for user input

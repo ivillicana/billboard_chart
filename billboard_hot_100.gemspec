@@ -1,17 +1,17 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "billboard_chart/version"
+require "billboard_hot_100/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "billboard_chart"
-  spec.version       = BillboardChart::VERSION
+  spec.name          = "billboard_hot_100"
+  spec.version       = BillboardHot100::VERSION
   spec.authors       = ["Isaac Villicana"]
   spec.email         = ["villicana.i@gmail.com"]
 
-  spec.summary       = %q{This gem (billboard_chart) includes a CLI shows a user the 'Billboard Hot 100' list.}
+  spec.summary       = %q{This gem (billboard_hot_100) includes a CLI shows a user the 'Billboard Hot 100' list.}
   spec.description   = %q{Scrapes data from https://www.billboard.com/charts/hot-100 and allows a user to see the chart in an organized manner. Selecting a song from the list will display the user with additional information about that song.}
-  spec.homepage      = "https://github.com/ivillicana/billboard_chart"
+  spec.homepage      = "https://github.com/ivillicana/billboard_hot_100"
   spec.license       = "MIT"
 
   

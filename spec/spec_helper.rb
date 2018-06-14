@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "billboard_chart"
+require "billboard_hot_100"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
