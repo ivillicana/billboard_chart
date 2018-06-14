@@ -9,10 +9,20 @@ class BillboardChart::Song
         @@all << self
     end
 
+    def self.reset
+        @@all.clear
+    end
+
     # Return this week's Billboard Hot 100 based on scraped data
-    def self.this_week
+    def self.this_week(range)
+        self.reset
         self.scrape_songs
-        @@all
+        if range == 1
+            @@all[0, 10]
+        else
+            range -= 1
+            @@all["#{range}1".to_i-1, 10]
+        end
     end
 
     # Scrape songs from https://www.billboard.com/charts/hot-100
