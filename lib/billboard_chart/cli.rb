@@ -2,6 +2,7 @@ class BillboardChart::CLI
 
     # Main instance method
     def run
+        create_songs
         list_songs
         main_menu
         close_app
@@ -10,7 +11,6 @@ class BillboardChart::CLI
     # list songs from scraper
     def list_songs
         puts "Here are this week's Billboard Hot 10 songs:"
-        @songs = BillboardChart::Song.this_week
         top_songs
     end
 
@@ -24,12 +24,17 @@ class BillboardChart::CLI
         puts ""
     end
 
+    #create Song objects
+    def create_songs
+        @songs = BillboardChart::Song.this_week
+    end
+
     # displays main menu
     def main_menu
         input = nil
         while input != "exit"   
-            puts "Enter number of song to see more information:"
-            puts "(Type 'exit' to close application or 'list' to see chart)"
+            puts "Please enter the song number to see more information:"
+            puts "(Type 'exit' to leave or 'list' to see chart)"
             input = gets.strip.downcase
 
             #if/elseif/else depending on user input
@@ -37,7 +42,7 @@ class BillboardChart::CLI
                 song = @songs[input.to_i - 1]
                 song.print_info
             elsif input == "list"
-                top_songs
+                list_songs
             else
                 puts "Please enter a valid value..."
             end
