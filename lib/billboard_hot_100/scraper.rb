@@ -15,7 +15,7 @@ def self.scrape_songs
         song.last_week_rank = row.css(".chart-row__secondary .chart-row__last-week .chart-row__value").text
         song.peak_position = row.css(".chart-row__secondary .chart-row__top-spot .chart-row__value").text
         song.weeks = row.css(".chart-row__secondary .chart-row__weeks-on-chart .chart-row__value").text
-        song
+        
     end  
 end
 
