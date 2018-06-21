@@ -20,7 +20,6 @@ class BillboardHot100::Song
         #Iterate through the first 100 rows of the billboard chart
         #Create instances of the Song class during each iteration
         rows = chart.css(".chart-row")
-        songs = []
         rows.collect do |row|
             song = self.new
             song.title = row.css(".chart-row__song").text
