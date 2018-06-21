@@ -2,6 +2,7 @@ class BillboardHot100::CLI
 
     # Main instance method
     def run
+        BillboardHot100::Scraper.scrape_songs
         main_menu
         select_song
     end
