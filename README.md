@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run 'bin/billboard_hot_100' for an interactive prompt that will allow you to experiment with the gem.
 
 ## Development
 
