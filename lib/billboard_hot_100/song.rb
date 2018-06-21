@@ -5,11 +5,7 @@ class BillboardHot100::Song
     # Return this week's Billboard Hot 100 based on scraped data
     def self.this_week(range)
         @@all ||= self.scrape_songs
-        if range == 1
-            @@all[0, 10]
-        else
-            @@all["#{range-1}0".to_i, 10]
-        end
+        @@all["#{range-1}0".to_i, 10] #selects only 10 songs within selected range
     end
 
     # Scrape songs from https://www.billboard.com/charts/hot-100
