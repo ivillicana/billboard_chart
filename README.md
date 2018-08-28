@@ -1,6 +1,6 @@
 # BillboardHot100
 
-BillboardHot100 is a command-line interface applications that scrapes and displays the 'Billboard Hot 100' songs from https://www.billboard.com/charts/hot-100
+BillboardHot100 is a command-line interface applications that scrapes and displays the 'Billboard Hot 100' songs from https://www.billboard.com/charts/hot-100. For a brief walk-through on application use and features, view the [walk-through video](https://youtu.be/15TexIcNxfQ).
 
 ## Installation
 
